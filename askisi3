@@ -1,0 +1,58 @@
+public class Main{
+    // Dhmiourgia string
+    static String onomaetairias;
+    static int ergazomenoi;
+    static String address;
+    public static String getOnomaetairias() {
+        return onomaetairias;
+    }
+
+    public static void main(String[]args){
+
+        try{
+            //gia onomaetairias=args[0]
+            Main.setOnomaetairias(args[0]);
+            //gia address=args[1]
+            Main.setAddress(args[1]);
+            try {
+                //gia employees=Integer.parseInt(args[2])
+                Main.setErgazomenoi(Integer.parseInt(args[2]));
+                if(onomaetairias == null || address == null) {
+                    System.out.println("There has been an Error in the code");
+                }else{
+                    System.out.println("Onoma etairias: " + onomaetairias);
+                    System.out.println("Diefthunsh: " + address);
+                    System.out.println("Ergazomenoi: " + ergazomenoi);
+                }
+            }catch(NumberFormatException e){
+                System.out.println("There's haven't been any 'Int' given with that name");
+            }
+
+
+        }catch(ArrayIndexOutOfBoundsException e){
+            System.out.println("There's been an Error with the array, not enough arguments been given.");
+        }
+
+    }
+
+    public static String getAddress() {
+        return address;
+    }
+
+    public static void setOnomaetairias(String onomaetairias) {
+        Main.onomaetairias = onomaetairias;
+    }
+
+    public static void setAddress(String address) {
+        Main.address = address;
+    }
+
+    public static void setErgazomenoi(int ergazomenoi) {
+        Main.ergazomenoi = ergazomenoi;
+    }
+
+    public static int getErgazomenoi() {
+        return ergazomenoi;
+    }
+
+}
